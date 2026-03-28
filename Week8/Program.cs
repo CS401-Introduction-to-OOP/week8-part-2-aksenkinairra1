@@ -1,9 +1,15 @@
-﻿
-class Program
+﻿using Week8;
+var container = new DataContainer<DataItem>();
+for (int i = 0; i < 10000; i++)
 {
-    public static void Main()
+    var item = new DataItem
     {
-        
-    }
-    
+        Id = $"item-{i}",
+        Payload = new byte[1024]
+    };
+// TODO: add item to container
 }
+Console.WriteLine($"Total size before GC: {container.GetTotalSize()} bytes");
+// TODO: call GC.Collect()
+Console.WriteLine("GC.Collect() was called.");
+Console.WriteLine($"Total size after GC: {container.GetTotalSize()} bytes");
