@@ -7,9 +7,10 @@ for (int i = 0; i < 10000; i++)
         Id = $"item-{i}",
         Payload = new byte[1024]
     };
-// TODO: add item to container
+    container.AddItem(item);
 }
 Console.WriteLine($"Total size before GC: {container.GetTotalSize()} bytes");
-// TODO: call GC.Collect()
+GC.Collect();
+GC.WaitForPendingFinalizers();
 Console.WriteLine("GC.Collect() was called.");
 Console.WriteLine($"Total size after GC: {container.GetTotalSize()} bytes");
