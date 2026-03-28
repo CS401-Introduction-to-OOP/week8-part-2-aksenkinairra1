@@ -6,13 +6,18 @@ Point p1 = new Point { X = 1, Y = 2 };
 Point p2 = p1;
 
 
-// TODO: modify p2 and print both p1 and p2
-Console.WriteLine();
+p2.X = 10;
+Console.WriteLine("p1: "); p1.Print();
+Console.Write("p2: "); p2.Print();
 
 // Reference type demo
 PointRef r1 = new PointRef { X = 1, Y = 2 };
 PointRef r2 = r1;
-// TODO: modify r2 and print both r1 and r2
-Console.WriteLine();
+
+
+r2.X = 10;
+
+Console.WriteLine("r1: "); r1.Print();
+Console.Write("r2: "); r2.Print();
 // Boxing demo
 BoxingTester.Test();
